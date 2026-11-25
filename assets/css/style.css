@@ -1,0 +1,42 @@
+/* ============ IQMS theme ============ */
+:root{
+  --iqms-primary:#0d3b66;
+  --iqms-accent:#1d8fb0;
+  --iqms-bg:#eef3f8;
+}
+*{font-family:'Segoe UI',system-ui,-apple-system,sans-serif}
+body{background:var(--iqms-bg);min-height:100vh}
+.sidebar{
+  position:fixed;inset:0 auto 0 0;width:240px;z-index:1040;
+  background:linear-gradient(180deg,#0d3b66 0%,#0a2f4f 100%);
+  box-shadow:2px 0 12px rgba(0,0,0,.15);
+  overflow-y:auto;
+}
+main{margin-left:240px;transition:margin .2s}
+.topbar{background:#fff}
+.nav-link{border-radius:.4rem}
+.sidebar .nav-link.active{background:var(--iqms-accent);color:#fff;font-weight:600}
+.card{border:none;border-radius:.75rem;box-shadow:0 1px 4px rgba(13,59,102,.08)}
+.stat-card{transition:transform .15s}
+.stat-card:hover{transform:translateY(-3px)}
+.table thead th{background:#0d3b66;color:#fff;font-size:.78rem;text-transform:uppercase;letter-spacing:.03em}
+.table-hover tbody tr:hover{background:rgba(29,143,176,.06)}
+.queue-number{font-weight:800;letter-spacing:.05em;font-variant-numeric:tabular-nums}
+.badge-waiting{background:#f8f9fa;color:#495057;border:1px solid #ced4da}
+.badge-called{background:#fff3cd;color:#664d03}
+.badge-serving{background:#d1ecf1;color:#0c5460}
+.badge-completed{background:#d4edda;color:#155724}
+.badge-skipped{background:#f8d7da;color:#721c24}
+.badge-cancelled{background:#e2e3e5;color:#383d41}
+.login-bg{background:linear-gradient(135deg,#eef3f8 0%,#dce8f5 100%)}
+/* Display screen */
+.display-screen{background:radial-gradient(circle at 50% 0%, #0a2540 0%, #04121f 70%);min-height:100vh;display:flex;flex-direction:column;color:#fff}
+.display-screen .display-current{font-size:clamp(4rem,15vw,11rem);line-height:1;font-weight:800;color:#4dd2ff}
+.display-screen .display-next{font-size:clamp(1.8rem,6vw,4rem);font-weight:700;color:#7fe3ff}
+.display-screen .display-label{font-size:clamp(1rem,3vw,2rem);letter-spacing:.25em;color:#5b7fa6}
+.ticket-card{border:2px dashed #0d3b66;border-radius:1rem}
+@media (max-width:991px){
+  .sidebar{transform:translateX(-100%);width:240px}
+  .sidebar.show{transform:translateX(0)}
+  main{margin-left:0}
+}
